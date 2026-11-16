@@ -67,3 +67,16 @@ body.sansa-experience{overflow-x:clip;background:var(--sansa-cream)}
 .sansa-experience .about h2,.sansa-experience .services .section-heading h2,.sansa-experience .work h2,.sansa-experience .contact h2{font-size:clamp(3.2rem,12vw,5rem)}
 }
 @media(prefers-reduced-motion:reduce){.sansa-experience .discipline-band .wrap,.sansa-scroll-cue:after{animation:none!important}.sansa-experience [data-sansa-reveal]{opacity:1;transform:none;transition:none}.sansa-experience .hero-art{transform:none!important}.sansa-experience .project-image img{transition:none}}
+
+/* Stability patch: keep normal document flow; no scroll-linked layout transforms. */
+.sansa-experience .hero-art{transform:none!important}
+.sansa-experience .hero-grid{min-height:0;display:grid;grid-template-columns:minmax(0,1fr);padding-block:clamp(50px,8vw,110px)}
+.sansa-experience .hero-copy{width:100%;min-width:0}
+.sansa-experience #hero-title{font-size:clamp(3rem,7vw,7rem);overflow-wrap:normal}
+.sansa-experience .hero-art{width:min(66%,680px);left:auto;right:0;top:0;bottom:0;height:100%}
+.sansa-experience .hero-copy>p{margin-left:0}
+.sansa-experience .hero-actions{justify-content:flex-start}
+.sansa-experience .discipline-band .wrap{animation:none!important;width:100%;max-width:var(--wrap);min-width:0;transform:none!important}
+.sansa-experience [data-sansa-reveal]{transform:none!important}
+@media(max-width:800px){.sansa-experience .hero-grid{min-height:0;padding:0}.sansa-experience .hero-art{position:relative;inset:auto;width:min(100%,520px);height:auto;aspect-ratio:4/3;margin:0 auto -25px}.sansa-experience .hero-copy{padding:0 0 50px}.sansa-experience #hero-title{font-size:clamp(2.8rem,10vw,5.5rem)}}
+@media(max-width:560px){.sansa-experience .hero-art{width:100%;margin-bottom:-15px}.sansa-experience .hero-copy{padding:0 0 32px}.sansa-experience #hero-title{font-size:clamp(2.5rem,10.5vw,4rem)}}
