@@ -1,0 +1,18 @@
+name: Recover currently published SANSA website
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download public assets from live site
+        run: python3 scripts/recover_live_site.py
+      - name: Commit recovered snapshot (no deployment)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/
+          git diff --cached --quiet || (git commit -m "backup: recover public SANSA website snapshot" && git push)
