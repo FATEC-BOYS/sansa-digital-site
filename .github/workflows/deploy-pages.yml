@@ -1,0 +1,32 @@
+name: Deploy SANSA to existing Cloudflare Pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sansa-pages-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify complete site assets
+        run: |
+          set -eu
+          test -s public/index.html
+          test -s public/app.js
+          test -s public/styles.css
+          test -d public/assets
+          test -n "$(find public/assets -type f -print -quit)"
+      - name: Publish to existing Pages project
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=sansa-digital --branch=main
