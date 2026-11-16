@@ -80,3 +80,17 @@ body.sansa-experience{overflow-x:clip;background:var(--sansa-cream)}
 .sansa-experience [data-sansa-reveal]{transform:none!important}
 @media(max-width:800px){.sansa-experience .hero-grid{min-height:0;padding:0}.sansa-experience .hero-art{position:relative;inset:auto;width:min(100%,520px);height:auto;aspect-ratio:4/3;margin:0 auto -25px}.sansa-experience .hero-copy{padding:0 0 50px}.sansa-experience #hero-title{font-size:clamp(2.8rem,10vw,5.5rem)}}
 @media(max-width:560px){.sansa-experience .hero-art{width:100%;margin-bottom:-15px}.sansa-experience .hero-copy{padding:0 0 32px}.sansa-experience #hero-title{font-size:clamp(2.5rem,10.5vw,4rem)}}
+
+/* Mobile layout correction from production screenshots */
+@media(max-width:800px){
+.sansa-experience .hero{min-height:auto!important;overflow:hidden}
+.sansa-experience .hero-grid{display:flex!important;flex-direction:column;min-height:0!important;gap:0}
+.sansa-experience .hero-art{order:0;position:relative!important;inset:auto!important;left:auto!important;right:auto!important;width:min(100%,440px)!important;height:auto!important;aspect-ratio:1/1;max-height:420px;margin:0 auto!important;overflow:hidden;transform:none!important}
+.sansa-experience .hero-art>img{object-fit:contain;object-position:center}
+.sansa-experience .hero-copy{order:1;width:100%;padding:0 0 42px!important;transform:none!important}
+.sansa-experience #hero-title{font-size:clamp(2.7rem,10vw,4.8rem)!important;line-height:1.05!important;letter-spacing:-.055em!important}
+.sansa-experience .hero-copy>p{font-size:clamp(1rem,3.8vw,1.2rem);line-height:1.6}
+.sansa-experience .hero-actions{display:flex;flex-wrap:wrap;gap:16px}
+.sansa-experience .hero-foot{position:static}
+}
+@media(max-width:420px){.sansa-experience .hero-art{max-height:310px;aspect-ratio:1/1}.sansa-experience #hero-title{font-size:clamp(2.5rem,10.2vw,3.7rem)!important}}
