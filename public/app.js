@@ -21,7 +21,7 @@ filterButtons.forEach(button => button.addEventListener('click', () => {
  document.querySelector('#filter-status').textContent = `${count} ${count === 1 ? 'projeto apresentado' : 'projetos apresentados'}`;
 }));
 document.querySelectorAll('[data-service]').forEach(link => link.addEventListener('click', () => { document.querySelector('#service').value = link.dataset.service; }));
-const emailAddress = 'als.s.sanches@gmail.com';
+const emailAddress = 'comercial@sansadigital.com.br';
 document.querySelector('.copy-email').addEventListener('click', async () => {
  const status = document.querySelector('.copy-status');
  try { await navigator.clipboard.writeText(emailAddress); status.textContent = 'E-mail copiado.'; }

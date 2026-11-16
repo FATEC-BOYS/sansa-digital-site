@@ -37,5 +37,6 @@ h2 em,.red-accent{color:var(--red-text)}
 .header nav,.button,.filters button{font-weight:500}
 .project h3 a span{color:var(--red-text)}
 .footer .brand-name{width:190px;font-size:inherit}
+.contact-whatsapp{display:table;margin-top:22px;font-size:14px}
 @media(max-width:800px){.brand-name{width:104px}.hero-signature{margin-top:18px;margin-bottom:25px}.hero h1{font-size:29px}.hero h1 .headline-light{font-size:.8em}}
 @media(max-width:560px){.hero-wordmark{font-size:inherit;max-width:none;position:relative}.hero-signature{margin-top:15px;margin-bottom:28px}.hero h1{font-size:31px}.hero h1 .headline-light{font-size:22px}.footer .brand-name{width:165px}}
